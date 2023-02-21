@@ -2,9 +2,9 @@
   <div class="container">
     <form @submit.prevent="submit()">
           <div class="input-group mb-3 me-3">
-            <input v-model="editable.query" required type="url" class="form-control" placeholder="URL"
+            <input v-model="editable.url" required type="url" class="form-control" placeholder="URL"
               aria-label="url" aria-describedby="button-addon2" name="url">
-              <input v-model="editable.query" required type="tag" name="tag" class="form-control" placeholder="TAG"
+              <input v-model="editable.tag" required type="tag" name="tag" class="form-control" placeholder="TAG"
               aria-label="TAG" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
               <i class="mdi mdi-earth mdi-spin"></i>
@@ -56,6 +56,7 @@ export default {
     async submit(){
       try {
         let formData = editable.value
+        // console.log(formData);
         await giftsService.submit(formData)
         editable.value = {}
       } catch (error) {

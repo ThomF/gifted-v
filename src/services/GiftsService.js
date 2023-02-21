@@ -13,8 +13,9 @@ class GiftsService {
     }
 
     async submit(formData) {
-        let gift = new Gift(formData)
-        const res = await sandBoxApi.post('gifts', { params: formData })
+
+        const res = await sandBoxApi.post('gifts', formData)
+
         logger.log("sending gift", res.data)
     }
 }
