@@ -1,11 +1,5 @@
 <template>
-    <div class="card">
-        <img src="{{ gifts.url }}">
-        <div class="card-body">
-            <h4>{{ gifts.tag }}</h4>
-        </div>
-
-    </div>
+    
 </template>
 
 
